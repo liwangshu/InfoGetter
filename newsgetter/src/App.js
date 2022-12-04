@@ -55,8 +55,7 @@ const countries = [
   "ve",
   "za",
 ];
-const apiKey1 = "bd25b9ecc00e4ec395153a40d9e23e6a";
-const apiKey2 = "be8cf4696fdd4b359fd48b2e2e161e75";
+const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 function App() {
   const [newsData, setNewsData] = useState([]);
@@ -66,7 +65,7 @@ function App() {
   const getTopNewsFromCountry = () => {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=100&apiKey=${apiKey1}`
+        `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=100&apiKey=${apiKey}`
       )
       .then((response) => {
         setNewsData(response.data.articles);
@@ -76,7 +75,7 @@ function App() {
   const getTopNewsFromKeyword = () => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=${keyword}&sortBy=popularity&apiKey=${apiKey1}`
+        `https://newsapi.org/v2/everything?q=${keyword}&sortBy=popularity&apiKey=${apiKey}`
       )
       .then((response) => {
         setNewsData(response.data.articles);
