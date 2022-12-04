@@ -1,0 +1,122 @@
+* {
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    text-align: center;
+    color: hsl(234, 12%, 34%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    align-self: center;
+  }
+  header .first-h2 {
+    margin-bottom: 0;
+    margin-top: 2em;
+    font-weight: 200;
+    font-size: 36px;
+  }
+  header .second-h2 {
+    margin: 0;
+    font-size: 36px;
+  }
+  header h3 {
+    font-size: 16px;
+    color: hsl(229, 6%, 66%);
+    padding: 0 20px;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  .cards {
+    display: grid;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0.25em 0.7em 1em hsla(228, 45%, 44%, 0.164);
+    border-radius: 7px;
+    height: 400px;
+  }
+  .mid-column {
+    margin: 0;
+  }
+  .card-1 {
+    margin: 2em 2em 0 2em;
+    border-top: 5px solid hsl(180, 62%, 55%);
+  }
+  .card-2 {
+    margin: 2em;
+    border-top: 5px solid hsl(0, 78%, 62%);
+  }
+  .card-3 {
+    margin: 2em;
+    border-top: 5px solid hsl(34, 97%, 64%);
+  }
+  .card-4 {
+    margin: 0 2em 2em 2em;
+    border-top: 5px solid hsl(212, 86%, 64%);
+  }
+  .card-title {
+    color: hsl(234, 12%, 34%);
+    padding-left: 30px;
+    margin-bottom: 0;
+  }
+  .card p {
+    color: hsl(229, 6%, 66%);
+    padding: 0 30px;
+  }
+  .card img {
+    padding: 30px;
+    align-self: flex-end;
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+  
+  @media (min-width: 940px) {
+    .cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cards {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .card-1 {
+      flex: 1;
+      width: 100%;
+    }
+    .card-2,
+    .card-3 {
+      margin: 2em 0;
+    }
+    .mid-column {
+      flex: 1;
+      width: 100%;
+    }
+    .card-4 {
+      flex: 1;
+      width: 100%;
+    }
+    .card:hover {
+        transform: scale(1.2);
+        /* box-shadow: 5px 5px 15px #CD5C5C; */
+      }
+  }
+  
