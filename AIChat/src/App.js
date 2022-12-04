@@ -4,7 +4,7 @@ import "@chatui/core/dist/index.css";
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
 });
 
 export default function App() {
