@@ -41,7 +41,7 @@ function Weather() {
     }
   }
 
-  const apiKey = "4327f11f6458df3e888e99c6b054069c";
+  const apiKey = "d9f0c2291661f6a6df199e95cd8c39bf";
 
   function getCurrentLocation() {
     fetch("http://ip-api.com/json")

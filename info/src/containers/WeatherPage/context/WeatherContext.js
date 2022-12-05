@@ -23,7 +23,7 @@ export const WeatherProvider = ({ children }) => {
     setUnit,
   };
 
-  const apiKey = "4327f11f6458df3e888e99c6b054069c";
+  const apiKey = "d9f0c2291661f6a6df199e95cd8c39bf";
 
   const citylat = selected?.initialvalues?.[0].latitude
     ? selected?.initialvalues?.[0].latitude
@@ -35,7 +35,7 @@ export const WeatherProvider = ({ children }) => {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${citylat}&lon=${citylon}&exclude=minutely,hourly&units=${unit}&appid=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => setWeathers(data));
