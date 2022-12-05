@@ -34,21 +34,20 @@ function HomePage() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState();
 
-  // useEffect(() => {
-  //   fetch("http://ip-api.com/json")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("xxx");
-  //       setCity(data.city);
-  //       fetch(
-  //         `https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lat}&exclude=minutely,hourly&units=metric&appid=4327f11f6458df3e888e99c6b054069c`
-  //       )
-  //         .then((response2) => response2.json())
-  //         .then((data2) => {
-  //           setWeatherData(data2);
-  //         });
-  //     });
-  // }, [city, weatherData]);
+  useEffect(() => {
+    fetch("http://ip-api.com/json")
+      .then((response) => response.json())
+      .then((data) => {
+        setCity(data.city);
+        fetch(
+          `https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lat}&exclude=minutely,hourly&units=metric&appid=4327f11f6458df3e888e99c6b054069c`
+        )
+          .then((response2) => response2.json())
+          .then((data2) => {
+            setWeatherData(data2);
+          });
+      });
+  }, []);
 
   return (
       <body>
