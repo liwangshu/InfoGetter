@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chatui/core": "^2.4.2",
     "@ionic/react": "^6.3.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.0",
     "ionicons": "^6.0.4",
+    "openai": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.1.5",
+    "simple-country-iso": "^1.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

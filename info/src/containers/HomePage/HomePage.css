@@ -40,7 +40,7 @@
   .cards {
     display: grid;
   }
-  .card {
+  .card2 {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -67,16 +67,16 @@
     margin: 0 2em 2em 2em;
     border-top: 5px solid hsl(212, 86%, 64%);
   }
-  .card-title {
+  .card2-title {
     color: hsl(234, 12%, 34%);
     padding-left: 30px;
     margin-bottom: 0;
   }
-  .card p {
+  .card2 p {
     color: hsl(229, 6%, 66%);
     padding: 0 30px;
   }
-  .card img {
+  .card2 img {
     padding: 30px;
     align-self: flex-end;
   }
@@ -114,7 +114,7 @@
       flex: 1;
       width: 100%;
     }
-    .card:hover {
+    .card2:hover {
         transform: scale(1.1);
         box-shadow: 5px 5px 15px #929095;
       }

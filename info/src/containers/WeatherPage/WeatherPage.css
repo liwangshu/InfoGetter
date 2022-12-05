@@ -24,7 +24,7 @@
   background-color: #e7e7e7;
   color: #8b7c9c;
 }
-.container {
+.container2 {
   border: 1px solid #3f3749;
   width: 90%;
   height: 91vh;
@@ -36,7 +36,7 @@
   justify-content: center;
   overflow-y: auto;
 }
-.container.Light {
+.container2.Light {
   border: 1px solid #c2c2c2;
   background: rgb(217, 217, 217);
   background: -moz-radial-gradient(
