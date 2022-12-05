@@ -34,21 +34,21 @@ function HomePage() {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState();
 
-  // useEffect(() => {
-  //   fetch("http://ip-api.com/json")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("xxx");
-  //       setCity(data.city);
-  //       fetch(
-  //         `https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lat}&exclude=minutely,hourly&units=metric&appid=4327f11f6458df3e888e99c6b054069c`
-  //       )
-  //         .then((response2) => response2.json())
-  //         .then((data2) => {
-  //           setWeatherData(data2);
-  //         });
-  //     });
-  // }, [city, weatherData]);
+  useEffect(() => {
+    fetch("http://ip-api.com/json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("xxx");
+        setCity(data.city);
+        fetch(
+          `https://api.openweathermap.org/data/3.0/onecall?lat=40.4395&lon=-79.943&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
+        )
+          .then((response2) => response2.json())
+          .then((data2) => {
+            setWeatherData(data2);
+          });
+      });
+  }, []);
 
   return (
       <body>
@@ -65,37 +65,37 @@ function HomePage() {
                             navigate('../weather');
                         }}>
               <h2 className="card-title">Weather</h2>
-              {/* <p>weather</p> */}
-              {/* <img src="images/icon-supervisor.svg" alt="" /> */}
+              <p>weather</p>
+              <img src="images/icon-supervisor.svg" alt="" />
               <h1
                 style={{
                   color: "#f6bd60",
-                  marginLeft: "25%",
-                  marginTop: "-8%",
+                  textAlign: 'center',
+                  marginTop: "-6%",
                 }}
               >
                 {city}
               </h1>
-              <h2 style={{ marginTop: "5%" }}>
-                <span style={{ color: "grey", marginLeft: "10%" }}>
+              <h2 style={{ marginTop: '5%', textAlign: 'center' }}>
+                <span style={{ color: "grey"}}>
                   {createDate(weatherData?.current.dt)}
                 </span>
                 <span style={{ color: "grey", marginLeft: "15%" }}>
                   {createDay(weatherData?.current.dt)}
                 </span>
               </h2>
-              {
+              <div style={{textAlign: 'center'}}>
                 <img
                   src={`http://openweathermap.org/img/wn/${weatherData?.current.weather[0].icon}@2x.png`}
                   alt="weatherIcon"
-                  style={{ marginRight: "35%", marginTop: "-8%" }}
+                  style={{ marginTop: "-8%" }}
                 />
-              }
+              </div>
               <div
                 style={{
                   color: "#eba834",
                   fontSize: "26px",
-                  marginLeft: "34%",
+                  textAlign: 'center',
                   marginTop: "-9%",
                 }}
               >
