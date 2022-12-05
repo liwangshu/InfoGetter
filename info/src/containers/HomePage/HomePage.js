@@ -7,8 +7,12 @@ import chaticon from "../HomePage/chat.png";
 function HomePage() {
   let navigate = useNavigate();
   const [chatBot, setChatBot] = useState(false);
-  function chatonclick(){
-    setChatBot(true);
+  function chatonclick() {
+    if (chatBot) {
+      setChatBot(false);
+    } else {
+      setChatBot(true);
+    }
   }
   // var chatBot=false;
   function createDate(dt) {
@@ -51,82 +55,88 @@ function HomePage() {
   // }, [city, weatherData]);
 
   return (
-      <body>
-        <header>
-          <h2 className="first-h2">
-            Reliable & efficient information delivery
-          </h2>
-          <h2 className="second-h2">InfoGetter</h2>
-          <h3>Made by Xiaoxuan Cui, Wangshu Li, YiHua Zhou and Youchuan Liu</h3>
-        </header>
-        <main>
-          <div className="cards">
-            <div className="card2 card-1" onClick={() => {
-                            navigate('../weather');
-                        }}>
-              <h2 className="card-title">Weather</h2>
-              {/* <p>weather</p> */}
-              {/* <img src="images/icon-supervisor.svg" alt="" /> */}
-              <h1
-                style={{
-                  color: "#f6bd60",
-                  marginLeft: "25%",
-                  marginTop: "-8%",
-                }}
-              >
-                {city}
-              </h1>
-              <h2 style={{ marginTop: "5%" }}>
-                <span style={{ color: "grey", marginLeft: "10%" }}>
-                  {createDate(weatherData?.current.dt)}
-                </span>
-                <span style={{ color: "grey", marginLeft: "15%" }}>
-                  {createDay(weatherData?.current.dt)}
-                </span>
-              </h2>
-              {
-                <img
-                  src={`http://openweathermap.org/img/wn/${weatherData?.current.weather[0].icon}@2x.png`}
-                  alt="weatherIcon"
-                  style={{ marginRight: "35%", marginTop: "-8%" }}
-                />
-              }
-              <div
-                style={{
-                  color: "#eba834",
-                  fontSize: "26px",
-                  marginLeft: "34%",
-                  marginTop: "-9%",
-                }}
-              >
-                {weatherData?.current.temp}
-                <span>&#8451;</span>
-              </div>
-            </div>
-            <div className="mid-column">
-              <div className="card2 card-2" onClick={() => {
-                            navigate('../news');
-                        }}>
-                <h2 className="card-title">News</h2>
-                <p>news</p>
-                <img src="images/icon-team-builder.svg" alt="" />
-              </div>
-            </div>
-            <div className="card2 card-4" onClick={() => {
-                            navigate('../twitter');
-                        }}>
-              <h2 className="card-title">Twitter</h2>
-              <p>twitter</p>
-              <img src="images/icon-calculator.svg" alt="" />
+    <body>
+      <header>
+        <h2 className="first-h2">Reliable & efficient information delivery</h2>
+        <h2 className="second-h2">InfoGetter</h2>
+        <h3>Made by Xiaoxuan Cui, Wangshu Li, YiHua Zhou and Youchuan Liu</h3>
+      </header>
+      <main>
+        <div className="cards">
+          <div
+            className="card2 card-1"
+            onClick={() => {
+              navigate("../weather");
+            }}
+          >
+            <h2 className="card-title">Weather</h2>
+            {/* <p>weather</p> */}
+            {/* <img src="images/icon-supervisor.svg" alt="" /> */}
+            <h1
+              style={{
+                color: "#f6bd60",
+                marginLeft: "25%",
+                marginTop: "-8%",
+              }}
+            >
+              {city}
+            </h1>
+            <h2 style={{ marginTop: "5%" }}>
+              <span style={{ color: "grey", marginLeft: "10%" }}>
+                {createDate(weatherData?.current.dt)}
+              </span>
+              <span style={{ color: "grey", marginLeft: "15%" }}>
+                {createDay(weatherData?.current.dt)}
+              </span>
+            </h2>
+            {
+              <img
+                src={`http://openweathermap.org/img/wn/${weatherData?.current.weather[0].icon}@2x.png`}
+                alt="weatherIcon"
+                style={{ marginRight: "35%", marginTop: "-8%" }}
+              />
+            }
+            <div
+              style={{
+                color: "#eba834",
+                fontSize: "26px",
+                marginLeft: "34%",
+                marginTop: "-9%",
+              }}
+            >
+              {weatherData?.current.temp}
+              <span>&#8451;</span>
             </div>
           </div>
-          <div onClick={chatonclick}>
-          <img src={chaticon} className="chatIcon"></img></div>
-          { chatBot?
-            <ChatPage/>: 
-            <></>}
-        </main>
-      </body>
+          <div className="mid-column">
+            <div
+              className="card2 card-2"
+              onClick={() => {
+                navigate("../news");
+              }}
+            >
+              <h2 className="card-title">News</h2>
+              <p>news</p>
+              <img src="images/icon-team-builder.svg" alt="" />
+            </div>
+          </div>
+          <div
+            className="card2 card-4"
+            onClick={() => {
+              navigate("../twitter");
+            }}
+          >
+            <h2 className="card-title">Twitter</h2>
+            <p>twitter</p>
+            <img src="images/icon-calculator.svg" alt="" />
+          </div>
+        </div>
+        <div onClick={chatonclick}>
+          <img src={chaticon} className="chatIcon"></img>
+        </div>
+        {chatBot ? <ChatPage /> : <></>}
+      </main>
+    </body>
   );
 }
 export default HomePage;
