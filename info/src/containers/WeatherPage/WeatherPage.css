@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
-.WeatherPage {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-.WeatherPage {
+#container_main {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   color: #cbc5d3;
   text-transform: capitalize;
 }
-.WeatherPage {
+#container_main {
   width: 100%;
   height: 100vh;
   background-color: #1f1b24;
@@ -20,7 +20,7 @@
   flex-direction: column;
   gap: 5px;
 }
-main.Light {
+#container_main.Light {
   background-color: #e7e7e7;
   color: #8b7c9c;
 }
@@ -114,7 +114,6 @@ aside .aside .aside-header input {
   border: 0px;
   padding: 10px;
   background-color: #cbc5d3;
-  /* background-image: url("img/arrow.png"); */
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: calc(100% - 8px) center;
@@ -200,7 +199,9 @@ aside .aside .aside-main .aside-main-item div {
   align-items: center;
   gap: 5px;
 }
-aside .aside .aside-main .aside-main-item div .material-symbols-rounded,
+aside .aside .aside-main .aside-main-item div .material-symbols-rounded {
+    font-size: 20px;
+}
 aside .aside .aside-main .aside-main-item div ion-icon {
   font-size: 20px;
 }

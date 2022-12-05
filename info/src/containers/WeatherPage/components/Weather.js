@@ -121,9 +121,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Feels Like
-                  <span className="material-symbols-rounded">
-                    device_thermostat
-                  </span>
+                  <ion-icon name="thermometer-outline"></ion-icon>
                 </div>
                 <span>
                   {Math.round(selectedDay === 0 ? weathers?.current?.feels_like : 
@@ -139,7 +137,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Day
-                  <span className="material-symbols-rounded">light_mode</span>
+                  <ion-icon name="sunny-outline"></ion-icon>
                 </div>
                 <span>
                   {Math.round(weathers?.daily?.[selectedDay]?.temp?.day)}
@@ -153,7 +151,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Night
-                  <span className="material-symbols-rounded">bedtime</span>
+                  <ion-icon name="moon-outline"></ion-icon>
                 </div>
                 <span>
                   {Math.round(weathers?.daily?.[selectedDay].temp?.night)}
@@ -174,7 +172,7 @@ function Weather() {
               <div className="aside-main-item">
                 <div>
                   Wind
-                  <span className="material-symbols-rounded">air</span>
+                  <ion-icon name="filter-outline"></ion-icon>
                 </div>
                 <span>{weathers?.daily?.[selectedDay]?.wind_speed}</span>
               </div>
@@ -185,9 +183,9 @@ function Weather() {
                 onClick={() => setTheme(theme === "Dark" ? "Light" : "Dark")}
               >
                 {theme === "Dark" ? (
-                  <ion-icon name="sunny">ha</ion-icon>
+                  <ion-icon name="sunny">haha</ion-icon>
                 ) : (
-                  <ion-icon name="moon">ha</ion-icon>
+                  <ion-icon name="moon">haha</ion-icon>
                 )}
               </span>
               <div className="unity">
