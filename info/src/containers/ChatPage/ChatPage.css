@@ -1,3 +1,10 @@
 body {
     margin: 0;
 }
+.ChatApp{
+    width: 400px;
+    height: 300px !important;
+    position: absolute;
+    right: 0px;
+    border-radius:  10px;
+}
