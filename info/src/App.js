@@ -6,6 +6,7 @@ import HomePage from "./containers/HomePage/HomePage";
 import WeatherPage from "./containers/WeatherPage/WeatherPage";
 import NewsPage from "./containers/NewsPage/NewsPage";
 import ChatPage from "./containers/ChatPage/ChatPage";
+import NavBar from "./containers/NavBar/NavBar";
 
 function AppRoutes() {
   let routes = useRoutes([
@@ -21,6 +22,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <NavBar></NavBar>
         <AppRoutes />
       </div>
     </BrowserRouter>
