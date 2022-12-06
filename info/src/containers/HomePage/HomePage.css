@@ -119,10 +119,13 @@
         box-shadow: 5px 5px 15px #929095;
       }
   }
-  .chatIcon{
+  .chatIcon {
     width: 100px;
     position: absolute;
     right: 400px;
     bottom: 0px;
+  }
+  .chatIcon:hover {
+    cursor: pointer;
   }
   

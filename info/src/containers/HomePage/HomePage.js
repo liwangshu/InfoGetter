@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ChatPage from "../ChatPage/ChatPage";
 import chaticon from "../HomePage/chat.png";
+import axios from "axios";
+
 function HomePage() {
   let navigate = useNavigate();
   const [chatBot, setChatBot] = useState(false);
@@ -14,7 +16,20 @@ function HomePage() {
       setChatBot(true);
     }
   }
-  // var chatBot=false;
+
+  const [hotNews, setHotNews] = useState([]);
+  const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+
+  const getHotNews = () => {
+    axios
+      .get(
+        `https://newsapi.org/v2/everything?sources=CNN&sortBy=popularity&apiKey=${apiKey}`
+      )
+      .then((response) => {
+        setHotNews(response.data.articles);
+      });
+  };
+
   function createDate(dt) {
     const newDate = new Date(dt * 1000);
     return newDate.toDateString().slice(3);
@@ -39,10 +54,11 @@ function HomePage() {
   const [weatherData, setWeatherData] = useState();
 
   useEffect(() => {
+    getHotNews();
     fetch("http://ip-api.com/json")
       .then((response) => response.json())
       .then((data) => {
-        console.log('Fetch weather!');
+        console.log("Fetch weather!");
         setCity(data.city);
         fetch(
           `https://api.openweathermap.org/data/3.0/onecall?lat=40.4395&lon=-79.943&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
@@ -75,13 +91,13 @@ function HomePage() {
             <h1
               style={{
                 color: "#f6bd60",
-                textAlign: 'center',
+                textAlign: "center",
                 marginTop: "-6%",
               }}
             >
               {city}
             </h1>
-            <h2 style={{ marginTop: "5%", textAlign: 'center' }}>
+            <h2 style={{ marginTop: "5%", textAlign: "center" }}>
               <span style={{ color: "grey" }}>
                 {createDate(weatherData?.current.dt)}
               </span>
@@ -89,7 +105,7 @@ function HomePage() {
                 {createDay(weatherData?.current.dt)}
               </span>
             </h2>
-            <div style={{textAlign: 'center'}}>
+            <div style={{ textAlign: "center" }}>
               <img
                 src={`http://openweathermap.org/img/wn/${weatherData?.current.weather[0].icon}@2x.png`}
                 alt="weatherIcon"
@@ -100,7 +116,7 @@ function HomePage() {
               style={{
                 color: "#eba834",
                 fontSize: "26px",
-                textAlign: 'center',
+                textAlign: "center",
                 marginTop: "-9%",
               }}
             >
@@ -117,6 +133,26 @@ function HomePage() {
             >
               <h2 className="card-title">News</h2>
               <p>news</p>
+              <h3
+                style={{
+                  color: "#f6bd60",
+                  textAlign: "center",
+                  marginTop: "5px",
+                }}
+              >
+                {hotNews[0]?.title}
+              </h3>
+              <div style={{ textAlign: "center" }}>
+                <img
+                  src={hotNews[0]?.urlToImage}
+                  alt="hotNewsImage"
+                  style={{
+                    width: "300px",
+                    height: "200px",
+                    marginTop: "-20px",
+                  }}
+                />
+              </div>
               <img src="images/icon-team-builder.svg" alt="" />
             </div>
           </div>

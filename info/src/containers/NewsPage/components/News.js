@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import axios from "axios";
 
 const getName = require("simple-country-iso");
@@ -58,14 +58,19 @@ const countries = [
 const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 function News() {
+  const buttonRef = useRef(null);
   const [newsData, setNewsData] = useState([]);
   const [country, setCountry] = useState(countries[0]);
   const [keyword, setKeyword] = useState("");
 
+  useEffect(() => {
+    buttonRef.current.click();
+  });
+
   const getTopNewsFromCountry = () => {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=100&apiKey=${apiKey}`
+        `https://newsapi.org/v2/top-headlines?country=${country}&sortBy=popularity&pageSize=100&apiKey=${apiKey}`
       )
       .then((response) => {
         setNewsData(response.data.articles);
@@ -138,7 +143,11 @@ function News() {
                 return <option value={c}>{getName(c)}</option>;
               })}
             </select>
-            <button className="btn btn-primary" onClick={getTopNewsFromCountry}>
+            <button
+              ref={buttonRef}
+              className="btn btn-primary"
+              onClick={getTopNewsFromCountry}
+            >
               Fetch Top News By Country
             </button>
           </div>

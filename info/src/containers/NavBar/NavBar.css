@@ -14,4 +14,11 @@
   #nav1 {
     background-color: rgb(235, 237, 237)!important;
   }
+
+  .navbar-brand:hover {
+    cursor: pointer;
+  }
   
+  .nav-item:hover {
+    cursor: pointer;
+  }
