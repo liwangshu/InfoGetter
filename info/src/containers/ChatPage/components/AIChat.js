@@ -25,7 +25,7 @@ export default function AIChat() {
         .createCompletion({
           model: "text-davinci-003",
           prompt: val,
-          max_tokens: 100,
+          max_tokens: 500,
           temperature: 0.9,
         })
         .then((response) =>
