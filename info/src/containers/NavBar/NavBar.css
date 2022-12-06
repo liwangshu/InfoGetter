@@ -10,4 +10,8 @@
   .navbar-lewagon .navbar-brand img {
     width: 40px;
   }
+
+  #nav1 {
+    background-color: rgb(235, 237, 237)!important;
+  }
   

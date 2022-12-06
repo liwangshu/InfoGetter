@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function NavBar() {
   let navigate = useNavigate();
   return (
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="nav1">
         <div class="container-fluid">
             <a class="navbar-brand" >
                 <img onClick={() => {
