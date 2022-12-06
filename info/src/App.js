@@ -4,6 +4,7 @@ import React, { useEffect, useState, useContext, useMemo } from "react";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from "./containers/HomePage/HomePage";
 import WeatherPage from "./containers/WeatherPage/WeatherPage";
+import TwitterPage from "./containers/TwitterPage/TwitterPage";
 import NewsPage from "./containers/NewsPage/NewsPage";
 import ChatPage from "./containers/ChatPage/ChatPage";
 import NavBar from "./containers/NavBar/NavBar";
@@ -13,6 +14,7 @@ function AppRoutes() {
     { path: "/", element: <HomePage /> },
     { path: "/weather", element: <WeatherPage /> },
     { path: "/news", element: <NewsPage /> },
+    { path: "/twitter", element: <TwitterPage /> },
     { path: "/chat", element: <ChatPage /> },
   ]);
   return routes;
