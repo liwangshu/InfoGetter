@@ -1,0 +1,80 @@
+/* twitter blue: #1DA1F2 */
+body {
+  margin: 0;
+}
+
+.float-container {
+}
+
+.float-child {
+  width: 40%;
+  float: left;
+  padding: 10px;
+  /* border: 2px solid red; */
+}
+
+#leftPart {
+  color: black;
+  /* height: 300px; */
+}
+
+#countryTitle {
+  margin-top: 50px;
+  border: 3px solid #1da1f2;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+#earthWrapper {
+  /* margin-top: 100px; */
+  /* border: 3px solid #1da1f2; */
+}
+
+#localTrendsTitle {
+}
+
+#localTrendsBoard {
+  border: 3px solid #1da1f2;
+  border-radius: 10px;
+  padding: 5px;
+  height: 350px;
+}
+
+#trendsContainer {
+  display: flex;
+  flex-direction: row;
+}
+.leftTrends {
+  width: 50%;
+  background-color: yellow;
+  text-align: center;
+  color: white;
+  height: 100%;
+}
+.rightTrends {
+  width: 50%;
+  height: 100%;
+  background-color: yellow;
+  text-align: center;
+  color: white;
+}
+
+.perTrend {
+  margin-top: 20px;
+  height: 30px;
+  word-wrap: break-word;
+}
+
+#trendsContainer a {
+  text-decoration: none;
+  color: black;
+}
+
+#trendsContainer a:visited {
+  color: black;
+}
+
+#trendsContainer a:hover {
+  text-decoration: underline;
+}
