@@ -44,7 +44,7 @@ export default function AIChat() {
 
   return (
     <Chat
-      navbar={{ title: "Chat With AI" }}
+      navbar={{ title: "Ask AI for help" }}
       messages={messages}
       renderMessageContent={renderMessageContent}
       onSend={handleSend}
