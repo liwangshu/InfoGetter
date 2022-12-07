@@ -4,6 +4,7 @@ body {
 }
 
 .float-container {
+  margin-left: 2rem;
 }
 
 .float-child {
@@ -18,12 +19,26 @@ body {
   /* height: 300px; */
 }
 
+#pageTitle {
+  margin-top: 20px;
+  padding-left: 1rem;
+}
+
+#pageTitle span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 #countryTitle {
-  margin-top: 50px;
+  margin-top: 30px;
   border: 3px solid #1da1f2;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 5px;
   font-size: 1.5rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  background-color: #1da1f2;
+  color: white;
 }
 
 #earthWrapper {
@@ -32,13 +47,18 @@ body {
 }
 
 #localTrendsTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-left: 1rem;
+  padding-top: 10px;
 }
 
 #localTrendsBoard {
   border: 3px solid #1da1f2;
-  border-radius: 10px;
+
+  border-radius: 15px;
   padding: 5px;
-  height: 350px;
+  height: 370px;
 }
 
 #trendsContainer {
@@ -47,7 +67,7 @@ body {
 }
 .leftTrends {
   width: 50%;
-  background-color: yellow;
+  /* background-color: yellow; */
   text-align: center;
   color: white;
   height: 100%;
@@ -55,26 +75,60 @@ body {
 .rightTrends {
   width: 50%;
   height: 100%;
-  background-color: yellow;
+  /* background-color: yellow; */
   text-align: center;
   color: white;
 }
 
 .perTrend {
-  margin-top: 20px;
-  height: 30px;
-  word-wrap: break-word;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 7.5px;
+  height: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 2px solid #1da1f2;
+  background-color: #1da1f2;
+  border-radius: 10px;
+  font-weight: 600;
+  /* word-wrap: break-word; */
+  overflow: hidden;
+  opacity: 1;
+  transition: 0.5s;
+}
+.perTrend a {
+  color: white;
+}
+.perTrend:hover {
+  opacity: 0.7;
 }
 
 #trendsContainer a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
 
 #trendsContainer a:visited {
-  color: black;
+  /* color: black; */
 }
 
 #trendsContainer a:hover {
   text-decoration: underline;
+}
+
+#globeTitle {
+  position: relative;
+  top: -550px;
+  left: 100px;
+  font-size: 1.5rem;
+  color: #1da1f2;
+  font-weight: 600;
+}
+
+.scene-container {
+  /* border: 3px solid #1da1f2; */
+
+  /* padding: px; */
 }
