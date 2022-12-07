@@ -76,7 +76,7 @@ const TwitterPage = () => {
 
   function showCountry(str) {
     let con = document.getElementById("countryTitle");
-    con.innerHTML = "Country: " + str;
+    con.innerHTML = "Country : " + str;
   }
 
   function initialRender() {
@@ -126,7 +126,7 @@ const TwitterPage = () => {
           <span> Trends from Twitter</span>
         </div>
         <div id="positionBoard">
-          <p id="countryTitle">Country: Click to select a country ☞</p>
+          <p id="countryTitle">Click to select a country ☞</p>
         </div>
         <div id="localTrendsBoard">
           <p id="localTrendsTitle">Top 10 Local Trends</p>
@@ -139,7 +139,7 @@ const TwitterPage = () => {
       <div id="rightPart" class="float-child">
         <div id="earthWrapper">
           <div id="globeViz"></div>
-          <div id="globeTitle">Try rotate and zoom the 3D globe~</div>
+          <div id="globeTitle">You can rotate and zoom the 3D globe~</div>
         </div>
       </div>
     </div>
