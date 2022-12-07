@@ -14,6 +14,8 @@ const TwitterPage = () => {
       .onGlobeClick(({ lat, lng }, event) => {
         // showPosition(lat, lng);
         showCountry("----");
+        initialRender();
+        noDataRender();
       })
       .backgroundColor("white")
       .width(600)
