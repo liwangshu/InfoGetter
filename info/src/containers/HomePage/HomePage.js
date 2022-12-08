@@ -195,7 +195,7 @@ function HomePage() {
                 />
               </svg>
               <span> </span>
-              Twitter trends
+              Twitter Trends
             </h1>
             <h4
               style={{
