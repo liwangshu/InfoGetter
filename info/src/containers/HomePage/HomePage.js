@@ -71,7 +71,7 @@ function HomePage() {
         console.log("Fetch weather!");
         setCity(data.city);
         fetch(
-          `https://api.openweathermap.org/data/3.0/onecall?lat=40.4395&lon=-79.943&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
+          `https://api.openweathermap.org/data/3.0/onecall?lat=${data.lat}&lon=${data.lon}&exclude=minutely,hourly&units=metric&appid=d9f0c2291661f6a6df199e95cd8c39bf`
         )
           .then((response2) => response2.json())
           .then((data2) => {
@@ -102,7 +102,7 @@ function HomePage() {
               style={{
                 color: "#f6bd60",
                 textAlign: "center",
-                marginTop: "-6%",
+                marginTop: "-15%",
               }}
             >
               {city}
