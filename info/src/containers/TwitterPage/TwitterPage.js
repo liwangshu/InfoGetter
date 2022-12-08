@@ -43,8 +43,10 @@ const TwitterPage = () => {
       )(document.getElementById("globeViz"));
   });
 
-  function getTrends(id) {
+  async function getTrends(id) {
     // console.log(finalTrends[id][0]);
+    let countryCode = 1500;
+    await fetchTrends(countryCode);
     const trendsSet = finalTrends[id];
     if (trendsSet.length === 0) {
       console.log("empty!!");
@@ -72,6 +74,11 @@ const TwitterPage = () => {
 
     leftTrendsBoard.innerHTML = leftHtml;
     rightTrendsBoard.innerHTML = rightHtml;
+  }
+
+  function fetchTrends(delay) {
+    console.log("Trends fetched");
+    return new Promise((res) => setTimeout(res, delay));
   }
 
   function showCountry(str) {
