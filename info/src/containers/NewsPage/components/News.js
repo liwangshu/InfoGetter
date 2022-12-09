@@ -65,7 +65,7 @@ function News() {
 
   useEffect(() => {
     buttonRef.current.click();
-  });
+  }, []);
 
   const getTopNewsFromCountry = () => {
     axios
