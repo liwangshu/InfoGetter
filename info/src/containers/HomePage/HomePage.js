@@ -51,6 +51,10 @@ function HomePage() {
     }
   }
 
+  function handleChildClick(e) {
+    e.stopPropagation();
+  }
+
   function getUSTrendName(index) {
     const USTrendsSet = finalTrends["23424977"];
     return USTrendsSet[index].name;
@@ -153,15 +157,22 @@ function HomePage() {
                 {hotNews[0]?.title}
               </h3>
               <div style={{ textAlign: "center" }}>
-                <img
-                  src={hotNews[0]?.urlToImage}
-                  alt="hotNewsImage"
-                  style={{
-                    width: "300px",
-                    height: "200px",
-                    marginTop: "-20px",
-                  }}
-                />
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={hotNews[0]?.url}
+                  onClick={handleChildClick}
+                >
+                  <img
+                    src={hotNews[0]?.urlToImage}
+                    alt="hotNewsImage"
+                    style={{
+                      width: "300px",
+                      height: "200px",
+                      marginTop: "-20px",
+                    }}
+                  />
+                </a>
               </div>
               <img src="images/icon-team-builder.svg" alt="" />
             </div>
