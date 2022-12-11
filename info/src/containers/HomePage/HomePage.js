@@ -237,6 +237,7 @@ function HomePage() {
                 href={getUSTrendLink(0)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleChildClick}
               >
                 {getUSTrendName(0)}
               </a>
@@ -263,6 +264,7 @@ function HomePage() {
                 href={getUSTrendLink(1)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleChildClick}
               >
                 {getUSTrendName(1)}
               </a>
@@ -289,6 +291,7 @@ function HomePage() {
                 href={getUSTrendLink(2)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleChildClick}
               >
                 {getUSTrendName(2)}
               </a>
