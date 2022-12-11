@@ -59,6 +59,7 @@ const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 function News() {
   const buttonRef = useRef(null);
+  const buttonRef2 = useRef(null);
   const [newsData, setNewsData] = useState([]);
   const [country, setCountry] = useState(countries[0]);
   const [keyword, setKeyword] = useState("");
@@ -92,6 +93,12 @@ function News() {
       return news.urlToImage;
     } else {
       return "https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg";
+    }
+  };
+
+  const handleKeypress = (e) => {
+    if (e.charCode === 13) {
+      buttonRef2.current.click();
     }
   };
 
@@ -163,8 +170,13 @@ function News() {
               placeholder="Input Keyword"
               style={{ width: "230px", marginRight: "50px" }}
               onChange={(e) => setKeyword(e.target.value)}
+              onKeyPress={handleKeypress}
             />
-            <button className="btn btn-primary" onClick={getTopNewsFromKeyword}>
+            <button
+              className="btn btn-primary"
+              onClick={getTopNewsFromKeyword}
+              ref={buttonRef2}
+            >
               Fetch Top News By Keyword
             </button>
           </div>

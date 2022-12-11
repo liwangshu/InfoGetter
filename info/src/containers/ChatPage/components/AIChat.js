@@ -7,9 +7,19 @@ const configuration = new Configuration({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY,
 });
 
+const initialMessages = [
+  {
+    type: "text",
+    content: { text: "Hi, this is OpenAI chat assistant. Ask me anything." },
+    user: {
+      avatar: "https://openai.com/content/images/2022/05/openai-avatar.png",
+    },
+  },
+];
+
 export default function AIChat() {
   const openai = new OpenAIApi(configuration);
-  const { messages, appendMsg, setTyping } = useMessages([]);
+  const { messages, appendMsg, setTyping } = useMessages(initialMessages);
 
   function handleSend(type, val) {
     if (type === "text" && val.trim()) {
@@ -32,6 +42,10 @@ export default function AIChat() {
           appendMsg({
             type: "text",
             content: { text: response.data.choices[0].text.trim() },
+            user: {
+              avatar:
+                "https://openai.com/content/images/2022/05/openai-avatar.png",
+            },
           })
         );
     }
@@ -44,6 +58,7 @@ export default function AIChat() {
 
   return (
     <Chat
+      locale="en-US"
       navbar={{ title: "Ask AI for help" }}
       messages={messages}
       renderMessageContent={renderMessageContent}
